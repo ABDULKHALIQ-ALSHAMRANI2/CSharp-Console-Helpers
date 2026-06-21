@@ -1,68 +1,78 @@
 <h1>CSharp-Console-Helpers</h1>
-<p>A comprehensive and robust collection of utility helpers and input validators designed specifically for C# Console Applications. This library focuses on ensuring secure, crash-free data parsing and robust defensive programming tactics.</p>
+<p>Welcome to <strong>CSharp-Console-Helpers</strong>, a growing, open-source class library dedicated to providing reusable utility helpers, defensive programming snippets, and robust input validators for C# Console Applications.</p>
+
+<p>The goal of this repository is to serve as a comprehensive toolbox for developers, offering production-ready code blocks that eliminate redundancy, sanitize inputs, and prevent runtime crashes.</p>
 
 <hr>
 
-<h2>Developer Profile</h2>
-<p>Built and maintained with 💻 by <strong>C#Fazza++</strong></p>
+<h2>Developer & Maintainer</h2>
+<p>Developed with 💻 by <strong>C#Fazza++</strong>. This repository is continuously updated with new helper methods and classes as new development challenges are solved.</p>
 
-<h2>Project License</h2>
-<p>This project is open-source and officially licensed under the <strong>MIT License</strong>.</p>
+<h2>License</h2>
+<p>This library is distributed under the <strong>MIT License</strong> — feel free to copy, modify, and use the code in both personal and commercial projects.</p>
 
 <hr>
 
-<h2>Key Features</h2>
+<h2>Library Structure & Available Tools</h2>
+<p>The repository is organized into logical utility modules. Below is the current map of available tools that you can copy and integrate into your projects:</p>
+
+<h3>1. Input Validation Module (<code>InputValidator.cs</code>)</h3>
+<p>Focuses on capturing user input safely, filtering out illegal characters, and forcing correct data types without crashing the application stream.</p>
+
 <ul>
-    <li><strong>Multi-Format Validation:</strong> Evaluates inputs against 5 different date structures simultaneously.</li>
-    <li><strong>Smart Sanitization:</strong> Seamlessly replaces wildcard typing mistakes (such as asterisks <code>*</code>) into valid delimiters.</li>
-    <li><strong>Infinite Error Trapping:</strong> Employs a secure loop that gently forces correct syntax without throwing runtime exceptions or crashing the execution stream.</li>
+    <li>
+        <strong><code>PrintUserDateTime()</code></strong>: 
+        Intercepts console inputs, cleans wildcard characters (like asterisks <code>*</code>), verifies the text against 5 distinct date formats simultaneously using <code>DateTime.TryParseExact</code>, and securely loops until a valid date is acquired.
+    </li>
 </ul>
 
-<h2>Component Documentation</h2>
-<h3>1. InputValidator.PrintUserDateTime()</h3>
-<p>This static method intercepts user input from the console console, cleans it, checks it against multiple formats, and safely extracts a valid <code>DateTime</code> object object.</p>
-
-<h4>Supported Input Formats:</h4>
+<h4>Supported Text Patterns for Date Parsing:</h4>
 <table>
     <thead>
         <tr>
-            <th style="text-align: left; padding: 8px;">Format Structure</th>
-            <th style="text-align: left; padding: 8px;">Example Input</th>
+            <th style="text-align: left; padding: 8px; border-bottom: 2px solid #ddd;">Pattern Type</th>
+            <th style="text-align: left; padding: 8px; border-bottom: 2px solid #ddd;">Accepted Example</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td style="padding: 8px;"><code>dd/MM/yyyy</code></td>
-            <td style="padding: 8px;">20/05/2026</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;">Slash Separator</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>20/05/2026</code></td>
         </tr>
         <tr>
-            <td style="padding: 8px;"><code>dd-MM-yyyy</code></td>
-            <td style="padding: 8px;">20-05-2026</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;">Dash Separator</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>20-05-2026</code></td>
         </tr>
         <tr>
-            <td style="padding: 8px;"><code>dd.MM.yyyy</code></td>
-            <td style="padding: 8px;">20.05.2026</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;">Dot Separator</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>20.05.2026</code></td>
         </tr>
         <tr>
-            <td style="padding: 8px;"><code>dd MM yyyy</code></td>
-            <td style="padding: 8px;">20 05 2026</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;">Space Separator</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>20 05 2026</code></td>
         </tr>
         <tr>
-            <td style="padding: 8px;"><code>dd,MM,yyyy</code></td>
-            <td style="padding: 8px;">20,05,2026</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;">Comma Separator</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>20,05,2026</code></td>
         </tr>
-         <tr>
-            <td style="padding: 8px;"><code>dd*MM*yyyy</code> (Auto-Cleaned)</td>
-            <td style="padding: 8px;">20*05*2026</td>
+        <tr>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;">Wildcard Asterisk (Auto-Sanitized)</td>
+            <td style="padding: 8px; border-bottom: 1px solid #eee;"><code>20*05*2026</code></td>
         </tr>
     </tbody>
 </table>
 
-<br>
+<hr>
 
-<h2>How To Use</h2>
-<p>Since the utility class and its methods are marked as <code>static</code>, you can invoke them directly anywhere in your program without creating an instance object:</p>
+<h2>Future Roadmap (Upcoming Modules)</h2>
+<p>New utilities are actively being developed and will be added to this library soon:</p>
+<ul>
+    <li><strong>Text Sanitization Helpers:</strong> String manipulation tools to strip spaces, scripts, and unwanted characters.</li>
+    <li><strong>Numeric Validators:</strong> Secure parsing for phone numbers, pricing formats, and range boundaries.</li>
+    <li><strong>Data Formatter Tools:</strong> Clean presentation formats for console layouts and tables.</li>
+</ul>
 
+<h2>Quick Integration Example</h2>
 <pre style="background-color: #f6f8fa; padding: 16px; border-radius: 6px; line-height: 1.25;">
 <code>
 using CSharpConsoleHelpers;
@@ -71,7 +81,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Simply call the helper method to securely process user input
+        // Call the static helper directly from the InputValidator library
         InputValidator.PrintUserDateTime();
     }
 }
