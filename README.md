@@ -63,6 +63,12 @@
 </table>
 
 <hr>
+<h3>2. DateTime & Storage Module (<code>DateTimeHelper.cs</code>)</h3>
+<p>Provides optimized methods to convert local date/time into UTC Ticks (long integers) for lightweight database storage, and securely rebuilds them back to the user's timezone.</p>
+<ul>
+    <li><code>ConvertToUtcTicks(DateTime localDateTime)</code>: Returns a 64-bit signed integer (Ticks).</li>
+    <li><code>ConvertFromUtcTicks(long utcTicks)</code>: Returns a local DateTime object.</li>
+</ul>
 
 <h2>Future Roadmap (Upcoming Modules)</h2>
 <p>New utilities are actively being developed and will be added to this library soon:</p>
